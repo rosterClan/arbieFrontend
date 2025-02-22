@@ -11,8 +11,8 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 
 ### Built With
 
-<a href="https://www.python.org/">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<a href="">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Python">
 </a>
 
 ## Getting Started
