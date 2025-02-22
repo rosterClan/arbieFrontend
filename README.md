@@ -27,10 +27,6 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
   <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySql">
 </a>
 
-
-
-
-
 ## Getting Started
 This is an example of how you may give instructions on setting this project locally. Clone this repo and then perform the following steps. 
 
@@ -39,14 +35,6 @@ This is an example of how you may give instructions on setting this project loca
 2: Install required librarys
   ```sh
   dotnet restore
-  ```
-3: Build the project
-  ```sh
-  dotnet build
-  ```
-4: Run the project
-  ```sh
-  dotnet run
   ```
 
 ## Contact
