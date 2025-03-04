@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/5ddbd84e-ef62-41bb-9fb7-3211f0cd087c)<br />
 <div align="center">
   <a href="https://shorturl.at/kwkso">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
