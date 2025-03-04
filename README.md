@@ -1,4 +1,4 @@
-<br />
+![image](https://github.com/user-attachments/assets/5ddbd84e-ef62-41bb-9fb7-3211f0cd087c)<br />
 <div align="center">
   <a href="https://shorturl.at/kwkso">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
@@ -11,7 +11,7 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 
 ## Figma Designs
 <a href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
-  <img src="" alt="figma">
+  <img src="https://drive.google.com/uc?export=view&id=1OE1wadZnDNvwY7H572cv8JlR9xk-Df4Y" alt="figma">
 </a>
 
 <a align="center" href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
