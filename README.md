@@ -10,7 +10,7 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 
 ## Figma Designs
 <a href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
-  <img width="50%" src="https://drive.google.com/uc?export=view&id=1Q7mQytMKBv5zgSTlX9XfuBgAo2_mIUAn" alt="figma">
+  <img width="50%" align="center" src="https://drive.google.com/uc?export=view&id=1Q7mQytMKBv5zgSTlX9XfuBgAo2_mIUAn" alt="figma">
 </a>
 
 <a align="center" href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
