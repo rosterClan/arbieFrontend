@@ -9,6 +9,12 @@
 ## About The Project
 A frontend companion to the backend multi-bookmaker horse racing odds aggregator. A public facing API was created with Golang, which interacts with an SQL database populated by the asformented odds aggregator backend. Data is then presented on a React frontend, allowing for navigation and display of odds offerings for entrants across various races/meets. 
 
+## Figma Designs
+<a href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
+  <img src="" alt="figma">
+</a>
+<p href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1" align="center">CLICK TO VIEW FIGMA DESIGNS</p>
+
 ### Built With
 
 <a href="">
