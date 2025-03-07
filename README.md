@@ -11,8 +11,8 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 ### Desired Features
 1: Use a date selecter to view past and current horse races occuring throughout Australia 
 - Data aquired via the horse race arbitrage scraper project linked here
-2. Allow the user to select a specific race, viewing all the entrents for said race and all the current odds being offered on said entrant by Australian bookies.
-3. Allow the user to create virtual bets, such that they can engage in the betting markets without the risk of real financial loss. 
+2: Allow the user to select a specific race, viewing all the entrents for said race and all the current odds being offered on said entrant by Australian bookies.
+3: Allow the user to create virtual bets, such that they can engage in the betting markets without the risk of real financial loss. 
 
 ## Wireframe Designs
 <a align="center">
