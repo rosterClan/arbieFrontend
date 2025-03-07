@@ -6,7 +6,21 @@
 </div>
 
 ## About The Project
-A frontend companion to the backend multi-bookmaker horse racing odds aggregator. A public facing API was created with Golang, which interacts with an SQL database populated by the asformented odds aggregator backend. Data is then presented on a React frontend, allowing for navigation and display of odds offerings for entrants across various races/meets. 
+A frontend companion to the backend multi-bookmaker horse racing odds aggregator. A public facing API was created with Golang, which interacts with an SQL database populated by the asformented odds aggregator backend. Data is then presented on a React frontend, allowing for navigation and display of odds offerings for entrants across various races/meets. A major aspect of this project was deisgning a usable frontend, allowing me to interest with my betting system using a useable web-interface. A major aspect of this project are the wireframes and figma designs I created, aiding me in the web-interfaces development. This project is currently incomplete. But I'm hoping to eventually support the following features: 
+
+### Desired Features
+1: Use a date selecter to view past and current horse races occuring throughout Australia 
+- Data aquired via the horse race arbitrage scraper project linked here
+2. Allow the user to select a specific race, viewing all the entrents for said race and all the current odds being offered on said entrant by Australian bookies.
+3. Allow the user to create virtual bets, such that they can engage in the betting markets without the risk of real financial loss. 
+
+## Wireframe Designs
+<a align="center">
+  <img width="100%" src="https://drive.google.com/uc?export=view&id=1KrLIu5z2ENO5qQdxCJ2FHL9eG672i2sU" alt="wireframe1">
+</a>
+<a align="center">
+  <img width="100%" src="https://drive.google.com/uc?export=view&id=1h4aOFFQr4kpXt168oHXsRNkMNqPbbrKp" alt="wireframe1">
+</a>
 
 ## Figma Designs
 <a align="center" href="https://www.figma.com/design/ligUzBEB3Gc2xDdfw2Y6xf/ShockOdds?node-id=0-1&t=KHvVv0Yfu8GAFyPW-1">
