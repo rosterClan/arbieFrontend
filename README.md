@@ -50,14 +50,7 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 </a>
 
 ## Getting Started
-This is an example of how you may give instructions on setting this project locally. Clone this repo and then perform the following steps. 
-
-### Prerequisites
-1: Clone the repo
-2: Install required librarys
-  ```sh
-  dotnet restore
-  ```
+This project relies upon a postgreSQL database; which would need to be properly configured, tables created and be populated to correctly formatted racing data. The degree of setup which would be required is more then what could be resonaibily expected in a resumue. Please watch the provided video to get the gist of the frontend system!
 
 ## Contact
 William Walker - william.sinclair.walker@gmail.com
