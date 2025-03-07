@@ -16,10 +16,10 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 
 ## Wireframe Designs
 <a align="center">
-  <img width="100%" src="https://drive.google.com/uc?export=view&id=1KrLIu5z2ENO5qQdxCJ2FHL9eG672i2sU" alt="wireframe1">
+  <img width="50%" src="https://drive.google.com/uc?export=view&id=1KrLIu5z2ENO5qQdxCJ2FHL9eG672i2sU" alt="wireframe1">
 </a>
 <a align="center">
-  <img width="100%" src="https://drive.google.com/uc?export=view&id=1h4aOFFQr4kpXt168oHXsRNkMNqPbbrKp" alt="wireframe1">
+  <img width="50%" src="https://drive.google.com/uc?export=view&id=1h4aOFFQr4kpXt168oHXsRNkMNqPbbrKp" alt="wireframe1">
 </a>
 
 ## Figma Designs
