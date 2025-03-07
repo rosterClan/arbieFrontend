@@ -15,6 +15,7 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
 <br/>
 2: Allow the user to select a specific race, viewing all the entrents for said race and all the current odds being offered on said entrant by Australian bookies.
 <br/>
+<br/>
 3: Allow the user to create virtual bets, such that they can engage in the betting markets without the risk of real financial loss. 
 
 ## Wireframe Designs
