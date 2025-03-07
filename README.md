@@ -5,6 +5,23 @@
   <h3 align="center">Frontend/Public RESTful API for Odds Aggregator</h3>
 </div>
 
+### Built With
+<a href="">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript">
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="html">
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react">
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Golang">
+</a>
+<a href="">
+  <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySql">
+</a>
+
 ## About The Project
 A frontend companion to the backend multi-bookmaker horse racing odds aggregator. A public facing API was created with Golang, which interacts with an SQL database populated by the asformented odds aggregator backend. Data is then presented on a React frontend, allowing for navigation and display of odds offerings for entrants across various races/meets. A major aspect of this project was deisgning a usable frontend, allowing me to interest with my betting system using a useable web-interface. A major aspect of this project are the wireframes and figma designs I created, aiding me in the web-interfaces development. This project is currently incomplete. But I'm hoping to eventually support the following features: 
 
@@ -31,23 +48,6 @@ A frontend companion to the backend multi-bookmaker horse racing odds aggregator
   <p>CLICK TO VIEW FIGMA DESIGNS</p>
 </a>
 
-### Built With
-
-<a href="">
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript">
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="html">
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react">
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Golang">
-</a>
-<a href="">
-  <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySql">
-</a>
 
 ## Getting Started
 This project relies upon a postgreSQL database; which would need to be properly configured, tables created and be populated to correctly formatted racing data. The degree of setup which would be required is more then what could be resonaibily expected in a resumue. Please watch the provided video to get the gist of the frontend system!
