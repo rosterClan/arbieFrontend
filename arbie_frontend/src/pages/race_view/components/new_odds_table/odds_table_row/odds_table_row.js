@@ -10,16 +10,16 @@ const OddsTableRow = (props) => {
 
   function get_relevent_platform_price(price_data_array,desired_platform) {
     for (let idx = 0; idx < price_data_array.length; idx++) {
-      if (price_data_array[idx]['Platform'] == desired_platform) {
-        return price_data_array[idx]['Price'];
+      if (price_data_array[idx]['Platform_Name'] == desired_platform) {
+        return price_data_array[idx]['Current_Price']['Odds'];
       }
     }
     return "--";
   }
 
   useEffect(() => {
-    const entrant_name = props.entrant['Entrant_name'];
-    const price_options = props.entrant['Prices'];
+    const entrant_name = props.entrant['Entrant_Name'];
+    const price_options = props.entrant['Odds'];
     const platform_template = props.platform_ordering;
 
     let prelim_price_list = [];
@@ -31,7 +31,7 @@ const OddsTableRow = (props) => {
     set_entrant_name(entrant_name);
     set_price_list(prelim_price_list);
 
-    if (props.entrant['Is_scratched'] == 1) {
+    if (props.entrant['Is_Scratched'] == 1) {
       set_visibility('disable')
     } else {
       set_visibility('');

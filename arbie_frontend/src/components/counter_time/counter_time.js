@@ -10,15 +10,10 @@ const CounterTime = (props) => {
   const [count_status_style_class, set_count_status_style_class] = useState("counter_time_container");
  
   const current_time = useContext(TimeContext);
-
-  useEffect(() => {
-    let temp = time;
-    setTime(temp);
-  }, []);
   
   useEffect(() => {
     if (active_status) {
-      let time_difference = (time.getTime() - (1000*60*60*10)) - current_time.getTime();
+      let time_difference = time.getTime() - current_time.getTime();
 
       let secconds = time_difference / 1000;
       let minutes = secconds / 60;

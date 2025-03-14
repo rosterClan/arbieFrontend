@@ -23,25 +23,20 @@ function getFormattedDateTime() {
 
 const EntrantChart = (props) => {
     Chart.register(zoomPlugin);
-    const [entrant_id, set_entrant_id] = useState(props.entrant_id);
+    const [entrant_data, set_entrant_data] = useState(props.entrant_data);
     const [price_data, set_price_data] = useState([]);
     const [graph_data, set_graph_data] = useState({labels: ['2024-08-10T00:00:00Z', '2024-08-10T01:00:00Z'],datasets: []});
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8080/get_entrant_price_history/${props.entrant_id}`)
-        .then(data => data.json())
-        .then(data => set_price_data(data))
-    },[props.entrant_id])
-
-    useEffect(() => {
-        var local_price_data = price_data;
+        var local_price_data = entrant_data['Odds'];
         var test_data = {labels: [1,2,3,4,5,6,7], datasets: []};
         var x_axis = new Set();
 
         local_price_data.forEach((element,idx) => {
-            element['Prices'].forEach((price_entry,idx) => {
-                if (!(price_entry['Record_time'] in x_axis)) {
-                    let date_obj = new Date(price_entry['Record_time']);
+
+            element['Price_Fluctuations'].forEach((price_entry,idx) => {
+                if (!(price_entry['Record_Time'] in x_axis)) {
+                    let date_obj = new Date(price_entry['Record_Time']);
                     let pre_date = new Date(date_obj.getTime() - 5);
                     let post_date = new Date(date_obj.getTime() + 5);
 
@@ -64,8 +59,9 @@ const EntrantChart = (props) => {
 
         local_price_data.forEach((platform,idx) => {
             var data = Array(x_axis.length).fill(null);
-            platform['Prices'].forEach((price_instance,idx) => {
-                var date_idx = new Date(price_instance['Record_time']);
+            console.log("hit", platform);
+            platform['Price_Fluctuations'].forEach((price_instance,idx) => {
+                var date_idx = new Date(price_instance['Record_Time']);
                 data[x_axis_idx_cache[date_idx]] = price_instance['Odds'];
             })
             var smug_val = null;
@@ -83,11 +79,11 @@ const EntrantChart = (props) => {
 
             test_data['datasets'].push(
                 {
-                    label: platform['Platform_name'],
+                    label: platform['Platform_Name'],
                     data: data,
                     fill: false,
-                    backgroundColor: platform['Platform_colour'],
-                    borderColor: platform['Platform_colour']
+                    backgroundColor: "rgb(15, 107, 161)",
+                    borderColor: "rgb(15, 107, 161)"
                 }
             )
 
@@ -97,9 +93,9 @@ const EntrantChart = (props) => {
             element = element.toISOString();
         })
         test_data['labels'] = x_axis;
-        
+        console.log(test_data);
         set_graph_data(test_data);
-    },[price_data])
+    },[entrant_data])
 
     const options = {
         scales: {
@@ -138,7 +134,7 @@ const EntrantChart = (props) => {
     return (
       <div class='entrant_graph_wpr'>
         <div class='entrant_graph_header'>
-            <p>{props.entrant_name}</p>
+            <p>{props.entrant_data["Entrant_Name"]}</p>
         </div>
         <div class='entrant_graph_body'>
             <Line data={graph_data} options={options}/>

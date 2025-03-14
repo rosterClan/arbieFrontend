@@ -18,15 +18,14 @@ const NewOddsTable = (props) => {
     set_entrants([]);
 
     const unionPlatforms = new Set();
-    const platformThemes = new Set();
+    
   
     const scratched_entrants = [];
     const active_entrants = [];
 
     entrants.forEach(entrant => {
-      entrant['Prices'].forEach(platformOffering => {
-        unionPlatforms.add(platformOffering['Platform']);
-        platformThemes.add(platformOffering['Platform_colour']);
+      entrant['Odds'].forEach(platformOffering => {
+        unionPlatforms.add(platformOffering['Platform_Name']);
       });
 
       if (entrant['Is_scratched'] == 1) {
@@ -45,11 +44,13 @@ const NewOddsTable = (props) => {
     });
   
     const platformsArray = Array.from(unionPlatforms);
-    const platformThemesArray = Array.from(platformThemes);
 
-    set_platform_themes(platformThemesArray);
+    const platformThemes = Array(platformsArray.length).fill("rgb(15, 107, 161)");
+    set_platform_themes(platformThemes);
     set_platform_offerings(platformsArray);
     set_entrants(sorted_entrants);
+
+    
   },[props.entrants]);
 
   return (

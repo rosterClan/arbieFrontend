@@ -9,15 +9,20 @@ import RightArrow from '../../static_resources/right_arrow.svg'
 import './on_day.css'
 
 const OnDay = () => {
+  var local_date = new Date();
   const [races, set_races] = useState([]);
   const [selected_date, set_selected_date] = useState(useContext(TimeContext));
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8080/get_day_races/${selected_date.getTime()}`)
+    fetch(`http://127.0.0.1:8080/get_day_races/${convert_to_utc(selected_date)}`)
     .then(response => response.json())
     .then(res => set_races(res))
     .catch(error => console.error(error))
   },[selected_date]);
+
+  const convert_to_utc = (date) => {
+    return date.getTime();
+  }
 
   const change_date = (modifier) => {
     const new_date = new Date(selected_date.getTime() + modifier);

@@ -14,15 +14,12 @@ type Prices struct {
 }
 
 type Entrant struct {
-	Entrant_Id   string      `json:"Entrant_Id"`
 	Entrant_Name string   `json:"Entrant_Name"`
 	Is_Scratched bool     `json:"Is_Scratched"`
 	Odds         []Prices `json:"Odds"`
 }
 
 type Race struct {
-	Race_Id    string       `json:"Race_Id"`
-	Track_Id   string       `json:"Track_Id"`
 	Track_Name string    `json:"Track_Name"`
 	Round      int       `json:"Round"`
 	Start_Time time.Time `json:"Start_Time"`
@@ -30,8 +27,6 @@ type Race struct {
 }
 
 type Meet struct {
-	Track_Id   string       `json:"Race_Id"`
-	Track_Name string    `json:"Track_Name"`
-	Meet_Date  time.Time `json:"Meet_Date"`
-	Races      []Race    `json:"Races"`
+	Track_Name string `json:"Track_Name"`
+	Races      []Race `json:"Races"`
 }

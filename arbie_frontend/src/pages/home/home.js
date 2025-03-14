@@ -4,6 +4,7 @@ import OnDay from '../../components/on_day/on_day'
 import './home.css'
 
 const Home = (props) => {
+  //
   return (
     <>
         <div class="basic_margin">

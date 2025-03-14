@@ -7,7 +7,7 @@ import CounterTime from '../../../counter_time/counter_time';
 
 const RoundSelect = (props) => {
   const [round, set_round] = useState(1);
-  const [race_data,set_race_data] = useState({});
+  const [race_data,set_race_data] = useState(props.race);
   const navigate = useNavigate(); 
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const RoundSelect = (props) => {
   }
 
   return (
-    <div style={{height: props.height}} onClick={()=>navigate(`/race/${race_data['Race_id']}`)} class={'round_select_container'}>
+    <div style={{height: props.height}} onClick={()=>navigate(`/race?track=${props.race_data["Track_Name"]}&round=${props.race_data["Round"]}&start_time=${props.race_data["Start_Time"]}`)} class={'round_select_container'}>
       <div class='padded_content'>
         
         <div class='vertical_divide'>

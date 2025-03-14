@@ -23,12 +23,7 @@ root.render(
               <Routes>
                 <Route index element={<Home/>}/>
 
-                <Route path="race">
-                  <Route 
-                    path=":race_id" 
-                    element={<RaceView/>}
-                  />
-                </Route>
+                <Route path="race" element={<RaceView/>}/>
 
               </Routes>
               </div>

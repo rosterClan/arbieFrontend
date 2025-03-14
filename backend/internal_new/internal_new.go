@@ -3,7 +3,10 @@ package internal_new
 import (
 	"arbie/db_new"
 	"arbie/new_models"
+	"fmt"
 	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,106 +14,25 @@ func Throw_Error(msg string, c *gin.Context) {
 	c.IndentedJSON(http.StatusBadRequest, gin.H{"err": msg})
 }
 
-func create_meet_list(race_id_list []string, c *gin.Context) []new_models.Meet {
-	meets := make(map[string]new_models.Meet)
-	for _, ele := range race_id_list {
-		curr_race, err := db_new.Get_Race_By_ID(ele)
-		if err != nil {
-			Throw_Error("Could parse race by id", c)
-		}
+func Get_Selected_Day_Races(c *gin.Context) {
+	time := c.Param("timestamp")
 
-		if val, ok := meets[curr_race.Track_Id]; ok {
-			val.Races = append(val.Races, curr_race)
-			meets[curr_race.Track_Id] = val
-		} else {
-			curr_meet := new_models.Meet{Track_Id: curr_race.Track_Id, Track_Name: curr_race.Track_Name, Meet_Date: curr_race.Start_Time, Races: make([]new_models.Race, 0)}
-			curr_meet.Races = append(curr_meet.Races, curr_race)
-
-			meets[curr_meet.Track_Id] = curr_meet
-		}
-	}
-
-	listed_meets := make([]new_models.Meet, 0)
-	for key := range meets {
-		listed_meets = append(listed_meets, meets[key])
-	}
-
-	return listed_meets
-}
-
-func Get_Day_Races(c *gin.Context) {
-	day_race_ids, err := db_new.Get_RaceIDs_On_Day(c.Param("timestamp"))
-	if err != nil {
-		Throw_Error("Couldn't load race_ids", c)
-	}
-
-	on_day_meets := create_meet_list(day_race_ids, c)
-	c.IndentedJSON(http.StatusOK, on_day_meets)
-
-}
-
-func Get_Next_2_go(c *gin.Context) {
-	next_2_go_raceIds, err := db_new.Get_Next_2_Go_RaceIds()
+	meets, err := db_new.Get_Races_On_Timestamp(time)
 	if err != nil {
 		Throw_Error("Couldn't get race_ids", c)
 	}
 
-	next_2_go_races := make([]new_models.Race, 0)
-	for _, race_id := range next_2_go_raceIds {
-		curr_race, err := db_new.Get_Race_By_ID(race_id)
-		if err != nil {
-			Throw_Error("Couldn't load race by id", c)
-		}
-		next_2_go_races = append(next_2_go_races, curr_race)
+	c.IndentedJSON(http.StatusOK, meets)
+
+}
+
+func Get_Next_2_go(c *gin.Context) {
+	next_2_go_races, err := db_new.Get_Next_2_Go_Race()
+	if err != nil {
+		Throw_Error("Couldn't get race_ids", c)
 	}
 
 	c.IndentedJSON(http.StatusOK, next_2_go_races)
-}
-
-func Get_Race_View(c *gin.Context) {
-	race, err := db_new.Get_Race_By_ID(c.Param("race_id"))
-	if err != nil {
-		Throw_Error("Cannot identify race.", c)
-	}
-
-	entrant_ids, err := db_new.Get_EntrantIDs_By_RaceID(c.Param("race_id"))
-	if err != nil {
-		Throw_Error("Cannot identify entrants.", c)
-	}
-
-	for _, entrant_id := range entrant_ids {
-		entrant, err := db_new.Get_Entrant_By_ID(entrant_id)
-		if err != nil {
-			Throw_Error("Couldn't find entrant details.", c)
-		}
-		Odds, err := db_new.Get_Price_By_EntrantID(entrant_id)
-		if err != nil {
-			Throw_Error("Couldn't identidy platform odds", c)
-		}
-		entrant.Odds = Odds
-		race.Entrants = append(race.Entrants, entrant)
-	}
-
-	c.IndentedJSON(http.StatusOK, race)
-}
-
-func Get_Other_Meet_Races(c *gin.Context) {
-
-	related_race_ids, err := db_new.Get_Related_RaceIds(c.Param("race_id"))
-	if err != nil {
-		Throw_Error("Couldn't find race ids.", c)
-	}
-
-	races := make([]new_models.Race, 0)
-	for _, race_id := range related_race_ids {
-		curr_race, err := db_new.Get_Race_By_ID(race_id)
-		if err != nil {
-			Throw_Error("Cannot find race by its id", c)
-		}
-		races = append(races, curr_race)
-	}
-
-	c.IndentedJSON(http.StatusOK, races)
 }
 
 func Get_Race_Entrants(c *gin.Context) {
@@ -144,4 +66,34 @@ func Get_Entrant_Price_History(c *gin.Context) {
 
 	entrant.Odds = entrant_prices
 	c.IndentedJSON(http.StatusOK, entrant)
+}
+
+func Get_Race_View(c *gin.Context) {
+	track := c.Query("track")
+	round := c.Query("round")
+	start_time := c.Query("start_time")
+
+	race_ids, err := db_new.Get_Race_Ids(track, round, start_time)
+	if err != nil {
+		Throw_Error("Couldn't identidy entrant prices", c)
+	}
+
+	entrants, err := db_new.Get_Entrants_By_Raceids(race_ids)
+	entrants, err = db_new.Fill_Entrant_Platform_Odds(race_ids, entrants)
+
+	layout := "2006-01-02T15:04:05 -07:00"
+	t, err := time.Parse(layout, start_time)
+	if err != nil {
+		fmt.Println("Error parsing timestamp:", err)
+	}
+
+	var race new_models.Race
+
+	race.Track_Name = track
+	race.Round = race.Round
+	race.Start_Time = t
+	race.Entrants = entrants
+
+	fmt.Println(track, round, start_time)
+	c.IndentedJSON(http.StatusOK, race)
 }
