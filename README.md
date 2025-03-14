@@ -4,7 +4,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1poQuJuuGx91CEhS72h-hF8H6rk48luZB" alt="Logo">
   </a>
   <h3 align="center">Frontend/Public RESTful API for Odds Aggregator</h3>
-  <a align="center" href="https://drive.google.com/uc?export=view&id=1poQuJuuGx91CEhS72h-hF8H6rk48luZB">
+  <a align="center" href="https://www.youtube.com/watch?v=O_n9Gb0OyVo">
     <p>DEMONSTRATION VIDEO</p>
   </a>
 </div>
