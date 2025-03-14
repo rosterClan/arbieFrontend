@@ -1,7 +1,7 @@
 <div align="center">
   
   <a href="https://www.youtube.com/watch?v=O_n9Gb0OyVo">
-    <img src="https://drive.google.com/uc?export=view&id=1poQuJuuGx91CEhS72h-hF8H6rk48luZB" alt="Logo" width="80" height="80">
+    <img src="https://drive.google.com/uc?export=view&id=1poQuJuuGx91CEhS72h-hF8H6rk48luZB" alt="Logo">
   </a>
   <h3 align="center">Frontend/Public RESTful API for Odds Aggregator</h3>
 </div>
